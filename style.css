@@ -1,0 +1,20 @@
+h1 {
+  padding-bottom: 1em;
+}
+p, ul, input {
+  font-size: 1.4em;
+}
+ul {
+  list-style-type: none;
+  margin: 0 0 1em;
+}
+li {
+  margin: 0 0 .5em;
+}
+.completed span {
+  color: #999;
+  text-decoration: line-through;
+}
+a {
+  display: block;
+}

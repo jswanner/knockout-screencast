@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Counter with reset</title>
+  <link rel="stylesheet" href="../bootstrap.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../knockout-2.0.0.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Counter with reset</h1>
+    <p>You have clicked the button
+      <span data-bind="text: count"></span> times.</p>
+    <input type="button" class="btn" value="Click Me" data-bind="click: increment" />  
+    <input type="button" class="btn" value="Reset Count" data-bind="click: reset, visible: allowReset" />
+    <script>
+      var Counter = function () {
+        this.count = ko.observable(0);
+        this.increment = function() {
+          this.count(this.count() + 1);
+        };
+        this.reset = function() {
+          this.count(0);
+        };
+        this.allowReset = ko.computed(function(){
+          return this.count() > 4;
+        }, this);
+      };
+      ko.applyBindings(new Counter());
+    </script>
+  </div>
+</body>
+</html>

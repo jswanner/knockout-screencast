@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Todo List</title>
+  <link rel="stylesheet" href="../bootstrap.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../knockout-2.0.0.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+    <ul id="todos" data-bind="foreach: todos">
+      <li data-bind="attr: {class: className}">
+        <input type="checkbox" data-bind="checked: completed" />
+        <span data-bind="text: title"></span>
+      </li>
+    </ul>
+    <a data-bind="visible: allowClear, click: clearList">Clear List</a>
+    <input type="text" placeholder="New Todo Title" data-bind="value: todoToAdd, event: {change: addTodo}" />
+  </div>
+  <script>
+    var Todo = function (title) {
+      this.title = title;
+      this.completed = ko.observable(false);
+      this.className = ko.computed(function () {
+        return this.completed() ? 'completed' : null;
+      }, this);
+    };
+    var Todos = function () {
+      this.todos = ko.observableArray([]);
+      this.todoToAdd = ko.observable('');
+      this.addTodo = function () {
+        this.todos.push(new Todo(this.todoToAdd()));
+        this.todoToAdd('');
+      };
+      this.allowClear = ko.computed(function () {
+        if (this.todos().length) {
+          return this.todos().every(function (todo) {
+            return todo.completed();
+          });
+        }
+      }, this);
+      this.clearList = function () {
+        this.todos([]);
+      };
+    };
+    ko.applyBindings(new Todos());
+  </script>
+</body>
+</html>

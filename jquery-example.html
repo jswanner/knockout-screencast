@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>jQuery Example</title>
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="jquery-1.7.1.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>jQuery Example</h1>
+    <p>You have clicked the button
+      <span id="counter">0</span> times.</p>
+    <input id="button" type="button" class="btn" value="Click Me" />
+    <script>
+      jQuery(function ($) {
+        $('#button').click(function () {
+          var $counter = $('#counter');
+          $counter.text(+$counter.text() + 1);
+        });
+      });
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dependencies Example</title>
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="knockout-2.0.0.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Dependencies Example</h1>
+    <script>
+      var name = "Jacob";
+      var name = ko.observable("Jacob");
+      var names = ko.observableArray(["Jane","John"]);
+    </script>
+  </div>
+</body>
+</html>

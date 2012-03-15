@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simple data bind</title>
+  <link rel="stylesheet" href="../bootstrap.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../knockout-2.0.0.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Simple data bind</h1>
+    <p>Hello, <span data-bind="text: name"></span></p>
+    <script>
+      ko.applyBindings({name: 'World!'});
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bindings Example</title>
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="knockout-2.0.0.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Bindings Example</h1>
+    <p>Hello, <span data-bind="text: name"></span></p>
+    <input type="text" data-bind="value: name" />
+    <script>
+      ko.applyBindings({name: ko.observable('World!')});
+    </script>
+  </div>
+</body>
+</html>
