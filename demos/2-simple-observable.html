@@ -11,10 +11,10 @@
     <h1>Simple observable</h1>
     <p>Hello, <span data-bind="text: name"></span>!</p>
     <script>
-      window.person = {
+      var person = {
         name: ko.observable('World')
       };
-      ko.applyBindings(window.person);
+      ko.applyBindings(person);
     </script>
   </div>
 </body>
