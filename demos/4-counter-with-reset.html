@@ -16,17 +16,17 @@
     <script>
       var Counter = function () {
         this.count = ko.observable(0);
-        this.increment = function() {
+        this.increment = function () {
           this.count(this.count() + 1);
         };
-        this.reset = function() {
+        this.reset = function () {
           this.count(0);
         };
-        this.allowReset = ko.computed(function(){
+        this.allowReset = ko.computed(function () {
           return this.count() > 4;
         }, this);
       };
-      ko.applyBindings(new Counter());
+      ko.applyBindings(new Counter);
     </script>
   </div>
 </body>
