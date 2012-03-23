@@ -9,10 +9,10 @@
 <body>
   <div class="container">
     <h1>Bindings Example</h1>
-    <p>Hello, <span data-bind="text: name"></span></p>
+    <p>Hello, <span data-bind="text: name"></span>!</p>
     <input type="text" data-bind="value: name" />
     <script>
-      ko.applyBindings({name: ko.observable('World!')});
+      ko.applyBindings({name: ko.observable('World')});
     </script>
   </div>
 </body>
