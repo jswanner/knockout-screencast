@@ -16,8 +16,7 @@
       var Counter = function () {
         this.count = ko.observable(0);
         this.increment = function () {
-          var current = this.count();
-          this.count(current + 1);
+          this.count(this.count() + 1);
         };
       };
       ko.applyBindings(new Counter);
